@@ -1,5 +1,56 @@
 
-# Comandos de Linux
+# Comandos de Linux básicos
+
+| Comandos Comunes de Navegación y Estructura de Ficheros |  |
+| :---- | :---- |
+| ls | Lista el contenido (archivos y directorios) de un directorio. |
+| cd | Cambia de directorio (navegar). Ej: cd /home/usuario o cd .. (subir un nivel). |
+| pwd | Muestra la ruta del directorio actual donde te encuentras. |
+| mkdir | Crea un nuevo directorio (carpeta). |
+| rmdir | Elimina un directorio vacío. |
+| touch | Crea un archivo vacío o actualiza la marca de tiempo de uno existente. |
+| man | Abre la página del manual (ayuda) de un comando. Ej: man ls. |
+|  |  |
+| **Comandos Comunes de Gestión de Ficheros y Directorios** |  |
+| cp | Copia archivos y directorios de una ubicación a otra. |
+| mv | Mueve o renombra archivos y directorios. |
+| rm | Elimina (borra) archivos o directorios de forma permanente. |
+| cat | Muestra el contenido completo de un archivo de texto en la terminal. |
+| head | Muestra las primeras 10 líneas de un archivo. |
+| tail | Muestra las últimas 10 líneas de un archivo (útil para logs). |
+| tar | Comprime y descomprime archivos (trabaja con archivos .tar, .tar.gz, etc.). |
+| zip/unzip | Comprime y descomprime archivos en formato .zip. |
+| **Comandos Comunes de Búsqueda y Filtrado** |  |
+| find | Busca archivos y directorios en una jerarquía de directorios según varios criterios (nombre, tamaño, fecha). |
+| grep | Busca patrones de texto dentro del contenido de uno o más archivos. |
+| locate | Busca archivos usando una base de datos preconstruida, muy rápido, pero puede no ser 100% actualizado. |
+| **Comandos Comunes de Gestión de Procesos** |  |
+| ps | Muestra una instantánea estática de los procesos que se están ejecutando actualmente. |
+| top | Muestra una vista dinámica y en tiempo real de los procesos, ordenados por consumo de CPU/Memoria. |
+| htop | Versión interactiva y mejorada de top con una interfaz más visual (a menudo requiere instalación). |
+| kill | Termina (envía una señal) un proceso por su PID (ID de Proceso). |
+| pgrep | Busca el PID (ID de Proceso) de un proceso por su nombre. |
+| **Comandos Comunes de Permisos y Usuarios** |  |
+| chmod | Cambia los permisos de acceso (lectura, escritura, ejecución) de un archivo o directorio. |
+| chown | Cambia el propietario (dueño) de un archivo o directorio. |
+| sudo | Ejecuta un comando como superusuario (administrador). |
+|  |  |
+| **Ejemplos grep** |  |
+| find . \-name "config.txt" | Busca un archivo llamado config.txt solo en el directorio actual (.). |
+| find /home/usuario \-name "\*.jpg" | Busca todos los archivos con extensión .jpg en el directorio del usuario y sus subdirectorios. |
+| find /var/www \-type d \-name "cache" | Busca solo directorios (-type d) llamados cache dentro de /var/www. |
+| find /tmp \-type f \-size \+10M | Busca todos los archivos (-type f) en /tmp cuyo tamaño sea mayor a 10 Megabytes (+10M). |
+| **Ejemplos find** |  |
+| find . \-name "config.txt" | Busca un archivo llamado config.txt solo en el directorio actual (.). |
+| find /home/usuario \-name "\*.jpg" | Busca todos los archivos con extensión .jpg en el directorio del usuario y sus subdirectorios. |
+| find /var/www \-type d \-name "cache" | Busca solo directorios (-type d) llamados cache dentro de /var/www. |
+| find /tmp \-type f \-size \+10M | Busca todos los archivos (-type f) en /tmp cuyo tamaño sea mayor a 10 Megabytes (+10M). |
+| **Ejemplos locate** |  |
+| locate notas\_de\_reunion.pdf | Busca rápidamente en todo el sistema la ruta de cualquier archivo llamado notas\_de\_reunion.pdf. |
+| locate \-i documentos | Busca archivos o directorios que contengan la palabra "documentos" en su nombre, ignorando mayúsculas/minúsculas (-i). |
+| sudo updatedb | (Comando para el administrador) Fuerza la actualización manual de la base de datos de locate para incluir los archivos creados más recientemente. |
+
+# Comandos de Linux sobre permisos
 
 ## chmod (cambiar los permisos de los archivos)
 
@@ -165,3 +216,5 @@ drwxr-xr-t 1 usuario grupo 0 date directorio
 ls -ld directorio
 drwxr-xr-t 1 usuario grupo 0 date directorio
 ```
+
+
