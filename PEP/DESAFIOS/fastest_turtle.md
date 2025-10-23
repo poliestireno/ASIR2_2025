@@ -1,5 +1,7 @@
 # Introducción
 
+
+
 Turtle es una librería de Python usada para generar gráficos de forma creativa. Requiere tener instalada otra extensión llamada Tkinter, pero viene incluida en la mayoría de distribuciones de Python.
 
 Si no está instalado Turtle, podemos hacerlo mediante el comando del gestor de paquetes de Python (llamado "PIP", "_Pip Installs Packages_"):
@@ -106,3 +108,5 @@ for i in range(1, 360000):
      if i%180 == 0:
          setpos(0, 0)
 ```
+
+![Ejemplo Turtle](https://github.com/user-attachments/assets/c45fe2ff-8bab-4397-9b43-dbea0f903865)
