@@ -1,6 +1,6 @@
 # Entrega
-## Código fuente
-## Las inágenes de lo conseguido en cada ejercicio
+ * Código fuente
+ * Las 3 imágenes de la solución de cada ejercicio
 
 # Introducción
 
