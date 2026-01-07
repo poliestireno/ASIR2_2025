@@ -70,6 +70,14 @@ Para conectarte al servidor MongoDB desde la terminal:
 
 `mongosh -u admin -p admin123 --authenticationDatabase admin`
 
+Una buena práctica para dejar de utilizar mongo es parar el contenedor, y en un momento futuro poderlo arrancar si perder nada:
+
+`docker stop mongodb-container`
+
+Para arrancarlo despues:
+
+`docker start -ai mongodb-container`
+
 ### **2\. Ver bases de datos disponibles**
 
 `show dbs`
