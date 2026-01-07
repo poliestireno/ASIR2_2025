@@ -4,13 +4,21 @@
 
 Ejecuta el siguiente comando para descargar la imagen oficial de MongoDB e iniciar un contenedor:
 
-`docker run -d --name mongodb-container -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin123 mongo`
+`docker run -d \
+  --name mongodb \
+  -p 27017:27017 \
+  -e MONGO_INITDB_ROOT_USERNAME=admin \
+  -e MONGO_INITDB_ROOT_PASSWORD=admin123 \
+  -v /TU_DIRECTORIO/mongo_data:/data/db \
+  mongo
+`
 
 * `-d`: Ejecuta el contenedor en segundo plano.  
 * `--name mongodb-container`: Nombre del contenedor.  
 * `-p 27017:27017`: Mapea el puerto local `27017` al puerto del contenedor.  
 * `-e MONGO_INITDB_ROOT_USERNAME`: Establece el usuario administrador.  
 * `-e MONGO_INITDB_ROOT_PASSWORD`: Establece la contraseña del usuario administrador.
+* `-v crea un volumen para que tenga persistencia, aunque que se borre el contenedor siguen los datos.`
 
   ### **Paso 2: Verificar el contenedor**
 
