@@ -225,7 +225,21 @@ Si no está instalado, consulta la documentación oficial de Docker para instala
 Buscar para ver su información en la web docker hub:
 https://hub.docker.com/_/hello-world
 
-La imagen `hello-world` es una de las más básicas en Docker. Puedes descargarla y ejecutarla directamente con el siguiente comando:
+La imagen `hello-world` es una de las más básicas en Docker. 
+
+`docker pull hello-world`
+
+conecta con Docker Hub
+
+descarga la imagen
+
+la guarda localmente
+
+Comprueba:
+
+`docker images`
+
+Ejecutar la imagen (run)
 
 `docker run hello-world`
 
