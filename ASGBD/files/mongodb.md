@@ -74,9 +74,14 @@ MongoDB es una base de datos NoSQL de tipo **documento**. En lugar de usar tabla
 
    ### **1\. Conectarse a MongoDB**
 
-Para conectarte al servidor MongoDB desde la terminal:
+Para conectarte al servidor MongoDB desde la terminal host:
 
 `mongosh -u admin -p admin123 --authenticationDatabase admin`
+
+Para conectarte al servidor MongoDB desde otro contenedor:
+
+`docker exec -it mongodb mongosh -u admin -p admin123 --authenticationDatabase admin`
+
 
 Una buena práctica para dejar de utilizar mongo es parar el contenedor, y en un momento futuro poderlo arrancar si perder nada:
 
