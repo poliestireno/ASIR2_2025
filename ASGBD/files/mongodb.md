@@ -85,11 +85,11 @@ Para conectarte al servidor MongoDB desde otro contenedor:
 
 Una buena práctica para dejar de utilizar mongo es parar el contenedor, y en un momento futuro poderlo arrancar si perder nada:
 
-`docker stop mongodb-container`
+`docker stop mongodb`
 
 Para arrancarlo despues:
 
-`docker start -ai mongodb-container`
+`docker start mongodb`
 
 ### **2\. Ver bases de datos disponibles**
 
