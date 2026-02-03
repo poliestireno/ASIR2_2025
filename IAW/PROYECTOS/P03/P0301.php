@@ -7,6 +7,10 @@ var_export($miConex);
 
 $aCoches = realizarQuery($miConex,"SELECT * FROM COCHES",null,true);
 
+$argumentosLeon = array(":NOMBRE"=>"LEON");
+$aCochesLeon = realizarQuery($miConex,"SELECT * FROM COCHES WHERE NOMBRE=:NOMBRE",$argumentosLeon,true);
+
+
 var_export($aCoches);
 
 ?>
@@ -34,6 +38,31 @@ var_export($aCoches);
     <tbody>
             <?php
                 foreach ($aCoches as $filaI)
+                {
+                    echo '<tr>';
+                    echo '<td>'.$filaI["NOMBRE"].'</td>';
+                    echo '<td>'.$filaI["MARCA"].'</td>';
+                    echo '<td>'.$filaI["CV"].'</td>';
+                    echo '</tr>';
+                }
+            ?>
+    </tbody>
+  </table>
+</div>
+    <div class="container mt-3">
+  <h2>COCHES LEON</h2>
+  <p>Todos los coches Leon:</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Modelo</th>
+        <th>Marca</th>
+        <th>CVs</th>
+      </tr>
+    </thead>
+    <tbody>
+            <?php
+                foreach ($aCochesLeon as $filaI)
                 {
                     echo '<tr>';
                     echo '<td>'.$filaI["NOMBRE"].'</td>';

@@ -9,6 +9,6 @@ function realizarQuery($conexion, $texto,$argumentos=null, $isfetch=false)
 {
     $comando = $conexion->prepare($texto);
     $comando->execute($argumentos);
-    if ($isfetch) return $comando->fetchAll();
+    if ($isfetch) return $comando->fetchAll(); 
 }
 ?>
