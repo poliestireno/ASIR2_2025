@@ -22,6 +22,9 @@
         <div>
                 <input type="submit" name="BOTON" value="UPDATE POR NOMBRE"/>
             </div>
+        <div>
+                <input type="submit" name="BOTON" value="DELETE POR NOMBRE Y CV"/>
+            </div>
     </form>
 </body>
 </html>

@@ -7,6 +7,14 @@ $argumentos = array(
     ":MARCA"=> $_POST["MARCA"],
     ":CV"=> $_POST["CV"],
 );
+$argumentosUpdate = array(
+":NOMBRE"=> $_POST["NOMBRE"],
+":CV"=> $_POST["CV"],
+);
+$argumentosUpdateDelete = array(
+":NOMBRE"=> $_POST["NOMBRE"],
+":CV"=> $_POST["CV"],
+);
 $miConexion = conectarDB();
 if ($_POST["BOTON"]=="INSERTAR")
 {
@@ -15,14 +23,15 @@ if ($_POST["BOTON"]=="INSERTAR")
 }
 else if ($_POST["BOTON"]=="UPDATE POR NOMBRE")
 {
-    $argumentos se mete esto= array(
-    ":NOMBRE"=> $_POST["NOMBRE"],
-    ":CV"=> $_POST["CV"],
-);
     $query ="UPDATE COCHES SET CV=:CV WHERE NOMBRE=:NOMBRE";
-    realizarQuery($miConexion,$query,$argumentos,false);
+    realizarQuery($miConexion,$query,$argumentosUpdate,false);
 }
-
+//borrar en función de nombre y CV
+else if ($_POST["BOTON"]=="DELETE POR NOMBRE Y CV")
+{
+    $query ="DELETE FROM COCHES WHERE CV=:CV AND NOMBRE=:NOMBRE";
+    realizarQuery($miConexion,$query,$argumentosUpdateDelete,false);
+}
 
 echo "PROCESO TERMINADO";
 ?>
