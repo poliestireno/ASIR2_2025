@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request,render_template,redirect,url_for
 
 app = Flask(__name__)
 
@@ -10,7 +10,8 @@ poblado = {
 # ruta principal
 @app.route("/")
 def inicio():
-    return "Servidor del poblado funcionando"
+    return render_template("index.html",poblado=poblado)
+    #return "Servidor del poblado funcionando"
 # ruta para obtener todo el poblado
 @app.route("/poblado", methods=["GET"])
 def obtener_poblado():
@@ -19,14 +20,15 @@ def obtener_poblado():
 @app.route("/nuevo_bar", methods=["POST"])
 def aumentarBar():
     poblado["num_bares"]= poblado["num_bares"] + 1
-    return jsonify(poblado)
+    return redirect(url_for('inicio'))
+    #return jsonify(poblado)
 
 @app.route("/nuevos_bares", methods=["POST"])
 def aumentarBares():
-    datos = request.get_json()
-    cantidad = datos.get("cantidad")
+    cantidad = request.form.get("cantidad",1,type=int)
     poblado["num_bares"]= poblado["num_bares"] + cantidad
-    return jsonify(poblado)
+    return redirect(url_for('inicio'))
+    #return jsonify(poblado)
 
 @app.route("/nuevo_hombre", methods=["POST"])
 def aumentarHombre():

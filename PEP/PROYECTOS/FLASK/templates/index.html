@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nombre de poblado: {{ poblado.nombre }}</h1>
+    <h2>Número bares: {{ poblado.num_bares }}</h2>
+    <form action="/nuevo_bar" method="post">
+        <input type="submit" value="NUEVO BAR">
+    </form>
+    <form action="/nuevos_bares" method="post">
+        <input type="number" name="cantidad" value="2">
+        <input type="submit" value="AÑADIR VARIOS BARES">
+    </form>
+</body>
+</html>
